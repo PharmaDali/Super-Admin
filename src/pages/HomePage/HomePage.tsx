@@ -8,6 +8,7 @@ import Users from '../Users/Users'
 import Notifications from '../Notifications/Notifications'
 import Tickets from '../Tickets/Tickets'
 import TicketDetailsPage from '../Tickets/TicketDetailsPage'
+import Profile from '../Profile/Profile'
 import { usePharmacies } from '../../context/PharmacyContext'
 
 const PAGE_TITLES: Record<string, string> = {
@@ -16,6 +17,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/users': 'Users',
   '/tickets': 'Tickets',
   '/notifications': 'Notifications',
+  '/profile': 'My Profile',
 }
 
 function HomePage() {
@@ -77,6 +79,12 @@ function HomePage() {
             <section className="w-full">
               <div className="max-w-[1400px]">
                 <Notifications />
+              </div>
+            </section>
+          ) : pathname === '/profile' ? (
+            <section className="w-full">
+              <div className="max-w-[1400px]">
+                <Profile />
               </div>
             </section>
           ) : (
